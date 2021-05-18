@@ -1,0 +1,26 @@
+!!python/object:config.Configuration
+batch_size: 32
+epochs: 1000
+input_shape: !!python/tuple
+- 128
+- 128
+- 3
+number_of_models: 5
+test_data: 0.2
+number_of_neurons: 1024
+loss_function: categorical_crossentropy
+dropout_rate: 0.5
+output_neurons: 7
+learning_rate: 0.001
+min_learning_rate: 0.0001
+reduce_learning_rate_factor: 0.5
+reduce_learning_rate_patience: 10
+early_stopping_patience: 100
+data_dir: resources/data
+result_dir: experiment
+augmentation_configuration: !!python/object:config.ImageAugmentationConfiguration
+  fill_mode: nearest
+  horizontal_flip: true
+  rotation_range: 40
+  shear_range: 0.2
+  zoom_range: 0.2
